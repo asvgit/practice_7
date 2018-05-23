@@ -1,0 +1,115 @@
+\stepcounter{mysection}\section{\arabic{mysection} Пример работы реализации}
+
+	Данный пример иллюстрирует работу группы лифтов, где их количество равно 2, в здании с 5 этажами.
+		В ходе работы системы появится два человека в моменты времени $t_2$ и $t_4$ на этажах $e_1$ и $e_0$,
+		и у каждого человека целью будет четвёртый этаж $d_4$.
+
+	Изначально первая кабина находится на первом этаже $e_0$, а вторя на втором $e_1$.
+		Ниже приведён лог показывающий работу системы:
+\begin{lstlisting}[basicstyle=\scriptsize]
+24 May 2018 06:49:49 [71:null] TRACE Start modulation
+24 May 2018 06:49:49 [71:null] WARNING Var 'Step' has null value
+24 May 2018 06:49:49 [71:null] INFO Set first step '0'
+24 May 2018 06:49:49 [71:0] TRACE Start step
+24 May 2018 06:49:49 [71:0] TRACE Finish step
+24 May 2018 06:49:49 [71:1] TRACE Start step
+24 May 2018 06:49:49 [71:1] TRACE Finish step
+24 May 2018 06:49:49 [71:2] TRACE Start step
+24 May 2018 06:49:49 [71:2] INFO A man appears with id '0' on floor with id '1'
+24 May 2018 06:49:49 [71:2] DEBUG Change list 'people_states' with id '0' res:'[1,0]'
+24 May 2018 06:49:49 [71:2] TRACE Putting floor to map
+24 May 2018 06:49:49 [71:2] DEBUG Current distances are '[1,0]'
+24 May 2018 06:49:49 [71:2] DEBUG Current min dist '0' with id '1'
+24 May 2018 06:49:49 [71:2] TRACE Copy var 'step' into 'r_0_step' with val '2'
+24 May 2018 06:49:49 [71:2] TRACE Copy var 'people_targets' into 'r_0_people_targets' with val '[4,4]'
+24 May 2018 06:49:49 [71:2] TRACE Copy var 'people_floors' into 'r_0_people_floors' with val '[1,0]'
+24 May 2018 06:49:49 [71:2] TRACE Copy var 'people_waiting' into 'r_0_people_waiting' with val '[0,0]'
+24 May 2018 06:49:49 [71:2] TRACE Copy var 'people_states' into 'r_0_people_states' with val '[1,0]'
+24 May 2018 06:49:49 [71:2] TRACE Copy var 'elevators_floors' into 'r_0_elevators_floors' with val '[0,1]'
+24 May 2018 06:49:49 [71:2] TRACE Copy var 'elev_rmap_1' into 'r_0_elev_rmap_1' with val '[]'
+24 May 2018 06:49:49 [71:2] TRACE Copy var 'elev_people_1' into 'r_0_elev_people_1' with val '[]'
+24 May 2018 06:49:49 [71:2] TRACE Copy var 'elev_rmap_0' into 'r_0_elev_rmap_0' with val '[]'
+24 May 2018 06:49:49 [71:2] TRACE Copy var 'elev_people_0' into 'r_0_elev_people_0' with val '[]'
+24 May 2018 06:49:49 [71:2] [r_0_:2] DEBUG Append to road map '[1,-1]' floor '1'
+24 May 2018 06:49:49 [71:2] [r_0_:2] DEBUG Elev floors '[0,1]'
+24 May 2018 06:49:49 [71:2] [r_0_:2] TRACE moving_elevators NElev '2' Id '0'
+24 May 2018 06:49:49 [71:2] [r_0_:2] DEBUG Elevator on '0' has goal '1'
+24 May 2018 06:49:49 [71:2] [r_0_:2] TRACE Change ElevPos '0' Id '0'
+24 May 2018 06:49:49 [71:2] [r_0_:2] DEBUG Move elevator '0' from '0' to '1'
+24 May 2018 06:49:49 [71:2] [r_0_:2] DEBUG Current elev '0' road map '[1,-1]' people '[]'
+24 May 2018 06:49:49 [71:2] [r_0_:2] TRACE moving_elevators NElev '2' Id '1'
+24 May 2018 06:49:49 [71:2] [r_0_:2] DEBUG Current elev '1' road map '[]' people '[]'
+24 May 2018 06:49:49 [71:2] [r_0_:3] TRACE Start step
+24 May 2018 06:49:49 [71:2] [r_0_:3] TRACE Do loop step
+24 May 2018 06:49:49 [71:2] [r_0_:3] DEBUG A man with id '0' has been waiting for '0'
+24 May 2018 06:49:49 [71:2] [r_0_:3] DEBUG Change list 'people_waiting' with id '0' res:'[1,0]'
+24 May 2018 06:49:49 [71:2] [r_0_:3] DEBUG Elev floors '[1,1]'
+24 May 2018 06:49:49 [71:2] [r_0_:3] TRACE moving_elevators NElev '2' Id '0'
+24 May 2018 06:49:49 [71:2] [r_0_:3] DEBUG Elevator on '1' has goal '1'
+24 May 2018 06:49:49 [71:2] [r_0_:3] DEBUG Elevator '0' has reached '1'
+24 May 2018 06:49:49 [71:2] [r_0_:3] TRACE Manage people
+24 May 2018 06:49:49 [71:2] [r_0_:3] INFO Going out people '[]' from elev '0'
+24 May 2018 06:49:49 [71:2] [r_0_:3] TRACE Trace getting_people_in '2'
+24 May 2018 06:49:49 [71:2] [r_0_:3] TRACE Trace getting_people_in '1'
+24 May 2018 06:49:49 [71:2] [r_0_:3] DEBUG Change list 'people_states' with id '0' res:'[2,0]'
+24 May 2018 06:49:49 [71:2] [r_0_:3] DEBUG Append to road map '[-1,4,-1]' floor '4'
+24 May 2018 06:49:49 [71:2] [r_0_:3] INFO Coming people '[0]' to elev '0'
+24 May 2018 06:49:49 [71:2] [r_0_:3] DEBUG Current elev '0' road map '[-1]' people '[0]'
+24 May 2018 06:49:49 [71:2] [r_0_:3] TRACE moving_elevators NElev '2' Id '1'
+24 May 2018 06:49:49 [71:2] [r_0_:3] DEBUG Current elev '1' road map '[]' people '[]'
+24 May 2018 06:49:49 [71:2] [r_0_:3] TRACE Finish step
+24 May 2018 06:49:49 [71:2] [r_0_:4] TRACE Start step
+24 May 2018 06:49:49 [71:2] [r_0_:4] TRACE Do loop step
+24 May 2018 06:49:49 [71:2] [r_0_:4] INFO A man appears with id '1' on floor with id '0'
+24 May 2018 06:49:49 [71:2] [r_0_:4] DEBUG Change list 'people_states' with id '1' res:'[2,1]'
+24 May 2018 06:49:49 [71:2] [r_0_:4] TRACE Putting floor to map
+24 May 2018 06:49:49 [71:2] [r_0_:4] DEBUG Current distances are '[9,1]'
+24 May 2018 06:49:49 [71:2] [r_0_:4] DEBUG Current min dist '1' with id '1'
+24 May 2018 06:49:49 [71:2] [r_0_:4] TRACE Copy var 'step' into 'r_0_0_step' with val '4'
+24 May 2018 06:49:49 [71:2] [r_0_:4] TRACE Copy var 'people_targets' into 'r_0_0_people_targets' with val '[4,4]'
+24 May 2018 06:49:49 [71:2] [r_0_:4] TRACE Copy var 'people_floors' into 'r_0_0_people_floors' with val '[1,0]'
+24 May 2018 06:49:49 [71:2] [r_0_:4] TRACE Copy var 'people_waiting' into 'r_0_0_people_waiting' with val '[1,0]'
+24 May 2018 06:49:49 [71:2] [r_0_:4] TRACE Copy var 'people_states' into 'r_0_0_people_states' with val '[2,1]'
+24 May 2018 06:49:49 [71:2] [r_0_:4] TRACE Copy var 'elevators_floors' into 'r_0_0_elevators_floors' with val '[1,1]'
+24 May 2018 06:49:49 [71:2] [r_0_:4] TRACE Copy var 'elev_rmap_1' into 'r_0_0_elev_rmap_1' with val '[]'
+24 May 2018 06:49:49 [71:2] [r_0_:4] TRACE Copy var 'elev_people_1' into 'r_0_0_elev_people_1' with val '[]'
+24 May 2018 06:49:49 [71:2] [r_0_:4] TRACE Copy var 'elev_rmap_0' into 'r_0_0_elev_rmap_0' with val '[-1,4,-1]'
+24 May 2018 06:49:49 [71:2] [r_0_:4] TRACE Copy var 'elev_people_0' into 'r_0_0_elev_people_0' with val '[0]'
+24 May 2018 06:49:49 [71:2] [r_0_0_:4] DEBUG Append to road map '[-1,0,-1,4,-1]' floor '0'
+24 May 2018 06:49:49 [71:2] [r_0_0_:4] DEBUG Elev floors '[1,1]'
+24 May 2018 06:49:49 [71:2] [r_0_0_:4] TRACE moving_elevators NElev '2' Id '0'
+24 May 2018 06:49:49 [71:2] [r_0_0_:4] DEBUG Elevator on '1' has goal '-1'
+24 May 2018 06:49:49 [71:2] [r_0_0_:4] TRACE Elevator '0' is closing the door
+24 May 2018 06:49:49 [71:2] [r_0_0_:4] TRACE Change ElevPos '1' Id '0'
+24 May 2018 06:49:49 [71:2] [r_0_0_:4] DEBUG Move elevator '0' from '1' to '0'
+24 May 2018 06:49:49 [71:2] [r_0_0_:4] DEBUG Current elev '0' road map '[0,-1,4,-1]' people '[0]'
+24 May 2018 06:49:49 [71:2] [r_0_0_:4] TRACE moving_elevators NElev '2' Id '1'
+24 May 2018 06:49:49 [71:2] [r_0_0_:4] DEBUG Current elev '1' road map '[]' people '[]'
+24 May 2018 06:49:49 [71:2] [r_0_0_:5] TRACE Start step
+24 May 2018 06:49:49 [71:2] [r_0_0_:5] TRACE Do loop step
+24 May 2018 06:49:49 [71:2] [r_0_0_:5] DEBUG A man with id '1' has been waiting for '0'
+24 May 2018 06:49:49 [71:2] [r_0_0_:5] DEBUG Change list 'people_waiting' with id '1' res:'[1,1]'
+24 May 2018 06:49:49 [71:2] [r_0_0_:5] DEBUG Elev floors '[0,1]'
+24 May 2018 06:49:49 [71:2] [r_0_0_:5] TRACE moving_elevators NElev '2' Id '0'
+24 May 2018 06:49:49 [71:2] [r_0_0_:5] DEBUG Elevator on '0' has goal '0'
+24 May 2018 06:49:49 [71:2] [r_0_0_:5] DEBUG Elevator '0' has reached '0'
+24 May 2018 06:49:49 [71:2] [r_0_0_:5] TRACE Manage people
+24 May 2018 06:49:49 [71:2] [r_0_0_:5] INFO Going out people '[]' from elev '0'
+24 May 2018 06:49:49 [71:2] [r_0_0_:5] TRACE Trace getting_people_in '2'
+24 May 2018 06:49:49 [71:2] [r_0_0_:5] DEBUG Change list 'people_states' with id '1' res:'[2,2]'
+24 May 2018 06:49:49 [71:2] [r_0_0_:5] DEBUG Road map '[-1,4,-1]' has such floor '4'
+24 May 2018 06:49:49 [71:2] [r_0_0_:5] TRACE Trace getting_people_in '1'
+24 May 2018 06:49:49 [71:2] [r_0_0_:5] INFO Coming people '[1]' to elev '0'
+24 May 2018 06:49:49 [71:2] [r_0_0_:5] DEBUG Current elev '0' road map '[-1,4,-1]' people '[0,1]'
+24 May 2018 06:49:49 [71:2] [r_0_0_:5] TRACE moving_elevators NElev '2' Id '1'
+24 May 2018 06:49:49 [71:2] [r_0_0_:5] DEBUG Current elev '1' road map '[]' people '[]'
+\end{lstlisting}
+
+Изучив выше изложенный журнал, можно увидеть, что происходит построение дерева формулы и её обход.
+	Для того чтобы было нагляднее следует прокомментировать строку лога.
+
+Первые четыре столбца в логе - это реальное время журналирования момента модуляции.
+	Следующим столбцом идёт связка двух чисел, первое число - это номер процесса,
+	он необходим для идентификации сессии, а второе число показывает момент времени модуляции.
+	Ещё одним столбцом является связка строки и числа, число - это так же момент времени в данной ветки формулы,
+	А строка отражает индекс чанка формулы в момент вывода, r означает корень выводимой формулы, а дальше серез нижние подчёркивание перечислены индексы кабин, которые участвуют в логическом выводе в данные момент.
