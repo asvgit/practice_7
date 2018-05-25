@@ -1,10 +1,10 @@
 \select@language {russian}
-\contentsline {section}{\numberline {}Задание на практику}{2}{section.1}
-\contentsline {section}{\numberline {}Введение}{3}{section.2}
-\contentsline {section}{\numberline {}1 Теоретическая часть}{4}{section.3}
-\contentsline {subsubsection}{\numberline {1.0.1}Группа формул \Psi }{4}{subsubsection.3.0.1}
-\contentsline {subsubsection}{\numberline {1.0.2}Группа формул \Phi }{5}{subsubsection.3.0.2}
-\contentsline {section}{\numberline {}2 Программная реализация}{6}{section.4}
-\contentsline {section}{\numberline {}3 Пример работы реализации}{8}{section.5}
-\contentsline {section}{\numberline {}Заключение}{10}{section.6}
-\contentsline {section}{\numberline {}Литература}{11}{section.7}
+\contentsline {section}{\numberline {}Задание на практику}{3}{section.1}
+\contentsline {section}{\numberline {}Введение}{4}{section.2}
+\contentsline {section}{\numberline {}1 Теоретическая часть}{5}{section.3}
+\contentsline {subsubsection}{\numberline {1.0.1}Группа формул \Psi }{5}{subsubsection.3.0.1}
+\contentsline {subsubsection}{\numberline {1.0.2}Группа формул \Phi }{6}{subsubsection.3.0.2}
+\contentsline {section}{\numberline {}2 Программная реализация}{7}{section.4}
+\contentsline {section}{\numberline {}3 Пример работы реализации}{9}{section.5}
+\contentsline {section}{\numberline {}Заключение}{11}{section.6}
+\contentsline {section}{\numberline {}Литература}{12}{section.7}
